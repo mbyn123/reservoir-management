@@ -4,7 +4,7 @@
       <Row>
         <Col span="24">
           <div class="topbanner">
-            <img src="../assets/1.png" alt />
+            <img src="../assets/banner.png" alt />
           </div>
         </Col>
         <Col span="24">
@@ -34,7 +34,7 @@ export default {
   components: {}
 };
 </script>
-<style>
+<style scoped>
 .topbanner {
   height: 235px;
 }
@@ -60,6 +60,7 @@ export default {
   color: #fff;
   text-align: center;
   line-height: 22px;
+  cursor: pointer;
 }
 
 .navbar-warp .nav .port:hover {

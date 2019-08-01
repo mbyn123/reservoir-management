@@ -10,15 +10,13 @@
           <a href="#">更多>></a>
         </div>
       </div>
-      <div class="content">
+      <div class="internal">
         <div class="inner" v-for="item in policies" :key="item.id">
           <div>
             <em></em>
           </div>
-          <div>{{item.title}}</div>
+          <div class="policies-title-name">{{item.title}}</div>
         </div>
-       
-      
       </div>
     </div>
   </div>
@@ -26,50 +24,49 @@
 
 <script>
 export default {
-    data(){
-        return{
-            policies:[
-                {
-                    title:'两站进行时系列报道二:淮安"两违"整治新突破,江湖保'
-                },
-                 {
-                    title:'两站进行时系列报道二:江湖保卫战正酣'
-                },
-                 {
-                    title:'两站进行时系列报道二:江湖保卫战正酣'
-                },
-                 {
-                    title:'两站进行时系列报道二:江湖保卫战正酣'
-                },
-                 {
-                    title:'两站进行时系列报道二:淮安"两违"整治新突破,江湖保'
-                },
-                 {
-                    title:'两站进行时系列报道二:江湖保卫战正酣'
-                },
-                 {
-                    title:'两站进行时系列报道二:江湖保卫战正酣'
-                },
-            ]
+  data() {
+    return {
+      policies: [
+        {
+          title: '两站进行时系列报道二:淮安"两违"整治新突破,江湖保卫战正酣'
+        },
+        {
+          title: "两站进行时系列报道二:江湖保卫战正酣"
+        },
+        {
+          title: "两站进行时系列报道二:江湖保卫战正酣"
+        },
+        {
+          title: "两站进行时系列报道二:江湖保卫战正酣"
+        },
+        {
+          title: '两站进行时系列报道二:淮安"两违"整治新突破,江湖保卫战正酣'
+        },
+        {
+          title: "两站进行时系列报道二:江湖保卫战正酣"
+        },
+        {
+          title: "两站进行时系列报道二:江湖保卫战正酣"
         }
-    }
+      ]
+    };
+  }
 };
 </script>
 
-<style>
+<style scoped>
 .policies {
   margin-left: 10px;
 }
 .policies .policies-titlebar {
   display: flex;
   justify-content: space-between;
-  padding: 10px ;
+  padding: 10px;
 }
 .policies .policies-titlebar .policies-title {
   font-size: 18px;
   color: #333;
   font-weight: bold;
- 
 }
 .policies .policies-titlebar .icon {
   display: inline-block;
@@ -79,28 +76,37 @@ export default {
 .policies .policies-titlebar a {
   color: #ccc;
 }
-.policies .content {
+.policies .internal {
   background: #fff;
-  padding: 10px;
+  padding: 18px 10px;
 }
 
-.policies .content .inner {
+.policies .internal .inner {
   display: flex;
-  margin-bottom:10px;
-  padding:16px 0
+  margin-bottom: 10px;
+  padding: 15px 0;
+
 }
 
-.policies .content .inner :hover{
-    color:#2d8cf0;
-    cursor: pointer;
+.policies .internal .inner :hover {
+  color: #2d8cf0;
+  cursor: pointer;
 }
 
-.policies .content .inner em{
-    width:5px;
-    height:5px;
-    display: inline-block;
-    background: #333;
-    border-radius: 50%;
-    margin:0 10px 
+.policies-title-name{
+   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.policies .internal .inner em {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  background: #333;
+  border-radius: 50%;
+  margin: 0 10px;
 }
 </style>

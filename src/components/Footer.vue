@@ -23,12 +23,12 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .footer-wrop {
   padding-top: 50px;
 }
 .footer {
-  background-image: url(../assets/13.jpg);
+  background-image: url(../assets/footerimg.jpg);
   text-align: center;
   font-size: 14px;
   padding: 30px 0;

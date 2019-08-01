@@ -7,13 +7,13 @@
       <Col span="16">
         <Row>
           <Col span="12">
-            <div class="slideshow">
+            <div class="banner-slideshow">
               <Carousel autoplay v-model="value2" loop>
                 <CarouselItem v-for="item in slideshows" :key="item.id">
                   <div class="demo-carousel">
                     <img :src="item.img" alt />
                     <div class="title">
-                      <span class="content">{{item.title}}</span>
+                      <span class="internal">{{item.title}}</span>
                       <a href="#">
                         <span class="link">更多 >></span>
                       </a>
@@ -25,7 +25,7 @@
           </Col>
           <Col span="5">
             <div class="picture">
-              <div class="content" v-for="item in pictures" :key="item.id">
+              <div class="internal" v-for="item in pictures" :key="item.id">
                 <img :src=item.img alt />
                 <div class="name">{{item.name}}</div>
               </div>
@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import Announcement from "./Announcement"
 export default {
   data() {
@@ -49,29 +49,29 @@ export default {
       value2: 0,
       slideshows: [
         {
-          img: require("../../assets/2.jpg"),
+          img: require("../../assets/banshan.jpg"),
           title: "小心水库运行管理现状及政策"
         },
         {
-          img: require("../../assets/3.jpg"),
+          img: require("../../assets/btq.jpg"),
           title: "小心水库运行管理现状及政策"
         },
         {
-          img: require("../../assets/4.jpg"),
+          img: require("../../assets/sk.jpg"),
           title: "小心水库运行管理现状及政策"
         },
         {
-          img: require("../../assets/5.jpg"),
+          img: require("../../assets/ts.jpg"),
           title: "小心水库运行管理现状及政策"
         }
       ],
       pictures: [
         {
-          img: require("../../assets/2.jpg"),
+          img: require("../../assets/banshan.jpg"),
           name: "半山水库"
         },
         {
-          img: require("../../assets/4.jpg"),
+          img: require("../../assets/sk.jpg"),
           name: "光山水库"
         },
       ]
@@ -90,7 +90,7 @@ export default {
   padding-right: 40px;
 }
 
-.slideshow .demo-carousel {
+.banner-slideshow .demo-carousel {
   position: relative;
 }
 
@@ -103,13 +103,13 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.slideshow .demo-carousel .title .content {
+.banner-slideshow .demo-carousel .title .internal {
   font-size: 16px;
   font-weight:bold;
   color: #fff;
 }
 
-.slideshow .demo-carousel .title .link {
+.banner-slideshow .demo-carousel .title .link {
   position: absolute;
   bottom: 20px;
   right: 10px;
@@ -120,7 +120,7 @@ export default {
   color: #fff;
   cursor: pointer;
 }
-.slideshow img {
+.banner-slideshow img {
   display: block;
   width: 100%;
   height: 360px;
@@ -129,12 +129,12 @@ export default {
   margin-left: 5px;
 }
 
-.picture .content {
+.picture .internal {
   margin-bottom: 5px;
   position: relative;
 }
 
-.picture .content .name {
+.picture .internal .name {
   position: absolute;
   bottom: 0;
   width: 100%;

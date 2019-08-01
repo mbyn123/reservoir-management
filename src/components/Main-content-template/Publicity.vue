@@ -12,48 +12,51 @@
               <a href="#">更多>></a>
             </div>
           </div>
-          <div class="content">
-            <div class="Publicity-card" v-for="item in Publicity" :key="item.id">
-              <div class="Publicity-inner">
-                <div class="picture">
-                  <img :src="item.img" />
-                </div>
-                <div class="introduce">
-                  <div style="display:flex;  justify-content: space-between;">
-                    <h3>{{item.title}}</h3>
-                    <Icon type="ios-pricetag-outline" size="20"/>
-                  </div>
+          <div class="internal">
+            <Row :gutter="10">
+              <Col span="8" v-for="item in publicity" :key="item.id">
+                <div class="Publicity-card">
+                  <div class="Publicity-inner">
+                    <div class="picture">
+                      <img :src="item.img" />
+                    </div>
+                    <div class="introduce">
+                      <div style="display:flex;  justify-content: space-between;">
+                        <h3>{{item.title}}</h3>
+                        <Icon type="ios-pricetag-outline" size="20" />
+                      </div>
 
-                  <div class="in">
-                    <span class="post">{{item.post}}</span>
-                    <span class="name">{{item.name}}</span>
+                      <div class="controller">
+                        <span class="post">{{item.post}}</span>
+                        <span class="name">{{item.name}}</span>
+                      </div>
+                      <div class="controller">
+                        <span class="post">{{item.post2}}</span>
+                        <span class="name">{{item.name2}}</span>
+                      </div>
+                      <div class="controller">
+                        <span class="post">{{item.post3}}</span>
+                        <span class="name">{{item.name3}}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="in">
-                    <span class="post">{{item.post2}}</span>
-                    <span class="name">{{item.name2}}</span>
-                  </div>
-                  <div class="in">
-                    <span class="post">{{item.post3}}</span>
-                    <span class="name">{{item.name3}}</span>
+                  <div class="site">
+                    <div class="site-reservoir">
+                      <span>{{item.sitePost1}}</span>
+                      <span>{{item.site1}}</span>
+                    </div>
+                    <div class="site-manage">
+                      <span>{{item.sitePost2}}</span>
+                      <span>{{item.site2}}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="site">
-                <div class="site-reservoir">
-                  <span>{{item.sitePost1}}</span>
-                  <span>{{item.site1}}</span>
-                </div>
-                <div class="site-manage">
-                  <span>{{item.sitePost2}}</span>
-                  <span>{{item.site2}}</span>
-                </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </Col>
     </Row>
-    
   </div>
 </template>
 
@@ -61,9 +64,9 @@
 export default {
   data() {
     return {
-      Publicity: [
+      publicity: [
         {
-          img: require("../../assets/7.jpg"),
+          img: require("../../assets/bq.jpg"),
           title: "白桥水库",
           post: "行政责任人:",
           name: "管洁",
@@ -77,7 +80,7 @@ export default {
           site2: "徐州市铜山区河道水库管理处"
         },
         {
-          img: require("../../assets/8.jpg"),
+          img: require("../../assets/bt.jpg"),
           title: "白塔泉水库",
           post: "行政责任人:",
           name: "周林",
@@ -91,7 +94,7 @@ export default {
           site2: "徐州市铜山区河道水库管理处"
         },
         {
-          img: require("../../assets/3.jpg"),
+          img: require("../../assets/btq.jpg"),
           title: "白桥水库",
           post: "行政责任人:",
           name: "管洁",
@@ -105,7 +108,7 @@ export default {
           site2: "徐州市铜山区河道水库管理处"
         },
         {
-          img: require("../../assets/7.jpg"),
+          img: require("../../assets/bq.jpg"),
           title: "白桥水库",
           post: "行政责任人:",
           name: "管洁",
@@ -119,7 +122,7 @@ export default {
           site2: "徐州市铜山区河道水库管理处"
         },
         {
-          img: require("../../assets/8.jpg"),
+          img: require("../../assets/bt.jpg"),
           title: "白塔泉水库",
           post: "行政责任人:",
           name: "周林",
@@ -133,7 +136,7 @@ export default {
           site2: "徐州市铜山区河道水库管理处"
         },
         {
-          img: require("../../assets/3.jpg"),
+          img: require("../../assets/btq.jpg"),
           title: "白桥水库",
           post: "行政责任人:",
           name: "管洁",
@@ -152,7 +155,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .Publicity-titlebar {
   display: flex;
   justify-content: space-between;
@@ -174,25 +177,18 @@ export default {
   color: #ccc;
 }
 
-.Publicity .content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .Publicity-card {
   padding: 10px;
   margin-bottom: 10px;
   background: #fff;
 }
 
-.Publicity .content .Publicity-inner {
+.Publicity .internal .Publicity-inner {
   display: flex;
 }
-.Publicity .content .Publicity-inner .picture {
-  width: 160px;
+.Publicity .internal .Publicity-inner .picture {
+  width: 200px;
   height: 130px;
-  padding: 10px;
 }
 .Publicity-inner .picture img {
   display: block;
@@ -200,23 +196,30 @@ export default {
   height: 100%;
 }
 .Publicity-inner .introduce {
-  padding: 10px 20px 0 0;
+  flex: 1;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 
-.Publicity-inner .introduce h3{
-  margin-bottom: 25px;
+.Publicity-inner .introduce h3 {
+  font-size:16px;
+  margin-bottom: 5px
 }
-.Publicity-inner .introduce .in .post {
+
+.Publicity-inner .introduce .controller{
+  padding-top:14px;
+}
+.Publicity-inner .introduce .controller .post {
   font-size: 14px;
   color: #333;
   margin-right: 5px;
 }
-.Publicity-inner .introduce .in .name {
+.Publicity-inner .introduce .controller .name {
   font-size: 14px;
   color: #333;
 }
 .Publicity .site {
-  padding: 5px 15px;
+  padding-top: 10px;
 }
 .Publicity .site .site-reservoir {
   margin-bottom: 5px;

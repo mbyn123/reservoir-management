@@ -11,12 +11,12 @@
             <a href="#">更多 >></a>
           </div>
         </div>
-        <div class="content">
-          <div class="item" v-for="item in Announcement" :key="item.id">
+        <div class="internal">
+          <div class="summary-title" v-for="item in announcement" :key="item.id">
             <div>
               <em></em>
             </div>
-            <div class="in">
+            <div class="list">
               <span class="subtitle">{{item.title}}</span>
               <span class="subtime">{{item.time}}</span>
             </div>
@@ -31,7 +31,7 @@
 export default {
   data() {
     return {
-      Announcement: [
+      announcement: [
         {
           title: "近期的气象风险预报分析，一定确保人民生命财产安全 ",
           time: "2019-07-29 19:23"
@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .summary {
   padding: 10px 10px 20px 10px;
   background: #fff;
@@ -93,23 +93,23 @@ export default {
   margin-right: 10px;
 }
 
-.summary .content .item {
+.summary .internal .summary-title {
   padding-left: 7px;
   display: flex;
   margin-bottom: 24px;
 }
-.summary .content .item .subtitle {
+.summary .internal .summary-title .subtitle {
   font-size: 14px;
   color: #333;
   font-weight: bold;
 }
 
-.content .item .subtime {
+.internal .summary-title .subtime {
   position: absolute;
   right: 0;
 }
 
-.content .item .in {
+.internal .summary-title .list {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

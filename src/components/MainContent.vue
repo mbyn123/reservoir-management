@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Banner from "./Main-content-template/Banner";
-import NewsInformation from "./Main-content-template/News-information";
-import Publicity from "./Main-content-template/Publicity"
-import SilhouettePicture from "./Main-content-template/SilhouettePicture"
+import Banner from "./main-content-template/Banner";
+import NewsInformation from "./main-content-template/NewsInformation";
+import Publicity from "./main-content-template/Publicity"
+import SilhouettePicture from "./main-content-template/SilhouettePicture"
 export default {
   components: {
     Banner,
